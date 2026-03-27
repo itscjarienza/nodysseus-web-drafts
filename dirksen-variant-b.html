@@ -45,6 +45,12 @@
     justify-content: space-between;
   }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
   .nav-logo {
     display: flex;
     flex-direction: column;
@@ -853,12 +859,14 @@
     <div class="nav-logo-top">Dirksen Engineering</div>
     <div class="nav-logo-sub">Civil Engineering & Land Surveying</div>
   </div>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Request a Quote</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Request a Quote</a>
+  </div>
 </nav>
 
 <!-- HERO -->
