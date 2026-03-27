@@ -51,6 +51,69 @@
     gap: 36px;
   }
 
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--tan);
+    transition: all 0.25s;
+  }
+
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0; right: 0;
+    background: var(--earth);
+    z-index: 99;
+    border-top: 1px solid rgba(201,185,154,0.15);
+    padding: 20px 24px 24px;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tan);
+    text-decoration: none;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(201,185,154,0.1);
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:hover { color: var(--white); }
+
+  .mobile-menu .mobile-cta {
+    margin-top: 16px;
+    background: var(--rust);
+    color: var(--white);
+    text-align: center;
+    padding: 14px;
+    border-bottom: none;
+  }
+
+  .mobile-menu .mobile-cta:hover { background: var(--rust-dark); }
+
   .nav-logo {
     display: flex;
     flex-direction: row;
@@ -800,13 +863,15 @@
   .hero-cta-group { animation: fadeUp 0.6s ease 0.4s both; }
   .hero-right { animation: fadeUp 0.7s ease 0.3s both; }
 
-  /* RESPONSIVE — HERO */
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     nav {
       padding: 0 24px;
     }
 
     .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
 
     .hero {
       grid-template-columns: 1fr;
@@ -836,6 +901,57 @@
 
     .hero-credentials {
       padding: 20px 24px;
+    }
+
+    /* Services */
+    .services {
+      padding: 60px 24px 80px;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* About */
+    .about {
+      padding: 72px 24px;
+    }
+
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    /* Clients */
+    .clients-inner {
+      padding: 0 24px;
+    }
+
+    .client-logo {
+      height: 160px;
+      max-width: 160px;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 72px 24px;
+    }
+
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 24px 24px;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .footer-copy {
+      text-align: left;
     }
   }
 
@@ -876,6 +992,31 @@
     .hero-stat-label {
       font-size: 9px;
     }
+
+    /* Services single column */
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Form row collapses */
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    /* Form padding */
+    .form-wrap {
+      padding: 32px 20px;
+    }
+
+    /* Client logos smaller */
+    .client-logo {
+      height: 100px;
+      max-width: 100px;
+    }
+
+    .marquee-track {
+      gap: 40px;
+    }
   }
 </style>
 </head>
@@ -896,8 +1037,18 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Request a Quote</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#services" class="mobile-nav-link">Services</a>
+  <a href="#about" class="mobile-nav-link">About</a>
+  <a href="#contact" class="mobile-nav-link">Contact</a>
+  <a href="#contact" class="mobile-cta">Request a Quote</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1142,6 +1293,21 @@
 
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
 </script>
 
 </body>
