@@ -480,6 +480,19 @@
     flex-shrink: 0;
   }
 
+  .about-panel details summary::after {
+    content: '▾';
+    font-family: sans-serif;
+    font-size: 14px;
+    color: var(--brown);
+    opacity: 0.5;
+    margin-left: 6px;
+  }
+
+  .about-panel details[open] summary::after {
+    content: '▴';
+  }
+
   .pe-badge {
     background: var(--earth);
     padding: 16px 20px;
