@@ -56,7 +56,8 @@
 | Section eyebrow     | IBM Plex Sans   | 10px                  | 500    | —      | 0.25em         | uppercase  |
 | Section title (h2)  | Bebas Neue      | clamp(40px–68px)      | —      | —      | 0.05em         | —          |
 | Service name        | Bebas Neue      | 24px                  | —      | —      | 0.06em         | —          |
-| Service desc        | IBM Plex Sans   | 13px                  | 300    | —      | —              | —          |
+| Service desc        | IBM Plex Sans   | 15px                  | 300    | —      | —              | —          |
+| Credentials list    | IBM Plex Sans   | 15px                  | 300    | —      | —              | —          |
 | About title         | Bebas Neue      | clamp(36px–60px)      | —      | —      | 0.05em         | —          |
 | About body          | Source Serif 4  | 17px                  | 300    | —      | —              | —          |
 | Contact title       | Bebas Neue      | clamp(36px–56px)      | —      | —      | 0.05em         | —          |
