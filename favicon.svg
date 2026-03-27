@@ -1,11 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 264" width="64" height="64">
-  <defs>
-    <clipPath id="c">
-      <circle cx="132" cy="132" r="132"/>
-    </clipPath>
-  </defs>
   <circle cx="132" cy="132" r="132" fill="#B54A1E"/>
-  <g transform="translate(0,204) scale(0.1,-0.1)" fill="#FDFCF9" stroke="none" clip-path="url(#c)">
+  <g transform="translate(0,204) scale(0.1,-0.1)" fill="#FDFCF9" stroke="none">
     <path d="M577 1309 c-326 -80 -521 -361 -479 -692 9 -76 19 -109 57 -185 153
 -308 528 -431 841 -276 129 64 267 228 309 368 l11 38 27 -72 c91 -246 313
 -400 577 -400 103 0 202 23 287 66 96 48 223 179 271 277 113 234 67 523 -111
