@@ -775,7 +775,19 @@
     font-size: 11px;
     color: var(--tan);
     font-weight: 300;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
+
+  .footer-credit {
+    color: var(--tan);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-credit:hover { color: var(--white); }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -1122,8 +1134,15 @@
     <img src="logo-dirksen-white.svg" alt="Dirksen Engineering" class="footer-logo-img">
     Dirksen Engineering
   </div>
-  <div class="footer-copy">© 2025 · Uvalde, TX · PE F-8848 · RPLS #10193741</div>
+  <div class="footer-copy">
+    <div>© <span id="footer-year"></span> Dirksen Engineering · Uvalde, TX · PE F-8848 · RPLS #10193741</div>
+    <div>Designed by <a href="https://nodysseus.co" target="_blank" class="footer-credit">Nodysseus AI</a></div>
+  </div>
 </footer>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
