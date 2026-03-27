@@ -460,6 +460,29 @@
     color: var(--rust);
   }
 
+  .about-panel details summary {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    color: var(--earth);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--tan);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .about-panel details summary::-webkit-details-marker { display: none; }
+
+  .about-panel details summary::before {
+    content: '●';
+    font-size: 6px;
+    color: var(--rust);
+    flex-shrink: 0;
+  }
+
   .pe-badge {
     background: var(--earth);
     padding: 16px 20px;
@@ -875,8 +898,8 @@
           <li>Uvalde</li>
           <li>Del Rio</li>
         </ul>
-        <details style="margin-top:12px;">
-          <summary style="cursor:pointer;">Other counties we service</summary>
+        <details>
+          <summary>Other counties we service</summary>
           <ul class="region-list" style="margin-top:12px;margin-bottom:0;">
             <li>Maverick County</li>
             <li>Val Verde County</li>
