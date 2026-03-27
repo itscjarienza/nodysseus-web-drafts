@@ -499,6 +499,8 @@
     align-items: center;
     width: max-content;
     animation: marquee 28s linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   @keyframes marquee {
@@ -930,6 +932,12 @@
     .client-logo {
       height: 160px;
       max-width: 160px;
+      border-radius: 18px;
+    }
+
+    .marquee-track {
+      gap: 48px;
+      animation-duration: 18s;
     }
 
     /* Contact */
@@ -1010,12 +1018,14 @@
 
     /* Client logos smaller */
     .client-logo {
-      height: 100px;
-      max-width: 100px;
+      height: 120px;
+      max-width: 120px;
+      border-radius: 14px;
     }
 
     .marquee-track {
-      gap: 40px;
+      gap: 36px;
+      animation-duration: 14s;
     }
   }
 </style>
@@ -1296,17 +1306,27 @@
 
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
+  const navEl = document.querySelector('nav');
 
-  hamburger.addEventListener('click', () => {
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
     hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open');
   });
 
   document.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-    });
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!navEl.contains(e.target) && !mobileMenu.contains(e.target)) {
+      closeMenu();
+    }
   });
 </script>
 
