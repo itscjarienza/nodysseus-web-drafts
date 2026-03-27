@@ -53,9 +53,15 @@
 
   .nav-logo {
     display: flex;
-    flex-direction: column;
-    gap: 0px;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
+  }
+
+  .nav-logo-img {
+    height: 40px;
+    width: auto;
   }
 
   .nav-logo-top {
@@ -857,8 +863,11 @@
 
 <nav>
   <a href="#" class="nav-logo">
-    <div class="nav-logo-top">Dirksen Engineering</div>
-    <div class="nav-logo-sub">Civil Engineering & Land Surveying</div>
+    <img src="logo-dirksen.svg" alt="Dirksen Engineering" class="nav-logo-img">
+    <div>
+      <div class="nav-logo-top">Dirksen Engineering</div>
+      <div class="nav-logo-sub">Civil Engineering & Land Surveying</div>
+    </div>
   </a>
   <div class="nav-right">
     <ul class="nav-links">
