@@ -498,14 +498,13 @@
     gap: 72px;
     align-items: center;
     width: max-content;
-    animation: marquee 28s linear infinite;
+    animation: marquee 40s linear infinite;
     will-change: transform;
-    transform: translateZ(0);
   }
 
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from { transform: translateX(0) translateZ(0); }
+    to   { transform: translateX(-50%) translateZ(0); }
   }
 
   .client-logo {
@@ -942,7 +941,7 @@
 
     .marquee-track {
       gap: 48px;
-      animation-duration: 18s;
+      animation-duration: 10s;
     }
 
     /* Contact */
@@ -1030,7 +1029,7 @@
 
     .marquee-track {
       gap: 36px;
-      animation-duration: 14s;
+      animation-duration: 8s;
     }
   }
 </style>
